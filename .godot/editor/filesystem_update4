@@ -1,4 +1,6 @@
+res://entities/player/PlayerController.gd
+res://entities/bullet/bullet.gd
+res://entities/bullet/bullet.tscn
 res://entities/player/Player.tscn
 res://scenes/Game.tscn
 res://entities/enemies/follower/follower_enemy.tscn
-res://entities/player/PlayerController.gd
