@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://colo68cppmrdg"]
+
+[ext_resource type="Texture2D" uid="uid://cq7xif3v423g" path="res://img/shapes/triangle.png" id="1_8t6ea"]
+[ext_resource type="Script" path="res://entities/enemies/follower/follower_machine.gd" id="2_ry8yv"]
+[ext_resource type="Script" path="res://entities/enemies/states/follow_state.gd" id="3_462y3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05gm6"]
+radius = 45.28
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ug4ik"]
+radius = 40.8
+
+[node name="FollowerEnemy" type="CharacterBody2D" groups=["enemies", "player"]]
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8t6ea")
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource("CircleShape2D_05gm6")
+
+[node name="MoveBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ug4ik")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_ry8yv")
+initial_state = NodePath("Follow")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Follow" type="Node" parent="StateMachine"]
+script = ExtResource("3_462y3")
+speed = 100.0
+
+[node name="Stunned" type="Node" parent="StateMachine"]

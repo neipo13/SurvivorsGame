@@ -1,3 +1,4 @@
+class_name PlayerController
 extends CharacterBody2D
 
  
@@ -7,8 +8,11 @@ extends CharacterBody2D
 
 var mostRecentDirection : Vector2
 
+func _ready() -> void:
+	add_to_group("player")
+
 func move(delta:float) -> void:
-	var input_direction : Vector2 = Input.get_vector("left", "right", "up", "down")
+	var input_direction : Vector2 = Input.get_vector("left", "right", "up", "down").normalized()
 	input_direction *= max_speed
 	if not input_direction.length_squared() > 0.0 && velocity.length_squared() > 0.0:
 		velocity = Math.approachVec2(velocity, Vector2.ZERO, friction * delta)

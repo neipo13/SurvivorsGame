@@ -12,13 +12,14 @@ radius = 30.0
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_almwc")
-max_speed = 250.0
-acceleration = 350.0
+max_speed = 500.0
+acceleration = 800.0
+friction = 800.0
 
 [node name="MovementShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3qurj")
 
-[node name="Sprites" type="Node2D" parent="."]
+[node name="Sprites" type="Marker2D" parent="."]
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
 scale = Vector2(0.25, 0.25)
@@ -26,5 +27,5 @@ texture = ExtResource("1_e6h70")
 
 [node name="HurtBox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="HurtShape" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_exqre")

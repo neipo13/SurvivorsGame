@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://1e0ack32oiy8"]
+[gd_scene load_steps=3 format=3 uid="uid://1e0ack32oiy8"]
 
 [ext_resource type="PackedScene" uid="uid://dob8bgny0ervo" path="res://entities/player/Player.tscn" id="1_ldwcs"]
+[ext_resource type="PackedScene" uid="uid://colo68cppmrdg" path="res://entities/enemies/follower/follower_enemy.tscn" id="2_sg3je"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ldwcs")]
 position = Vector2(956, 553)
+
+[node name="FollowerEnemy" parent="." instance=ExtResource("2_sg3je")]

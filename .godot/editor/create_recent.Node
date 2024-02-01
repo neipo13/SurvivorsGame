@@ -1,5 +1,7 @@
-CharacterBody2D
-Node2D
-Area2D
+Node
 CollisionShape2D
+Marker2D
+CharacterBody2D
+Area2D
 Sprite2D
+Node2D

@@ -1,7 +1,4 @@
 res://entities/player/Player.tscn
-res://entities/player/PlayerController.gd
-res://util/Math.gd
 res://scenes/Game.tscn
-res://util/log.gd
-res://util/states/state.gd
-res://util/states/state_machine.gd
+res://entities/enemies/follower/follower_enemy.tscn
+res://entities/player/PlayerController.gd
